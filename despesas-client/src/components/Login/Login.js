@@ -2,15 +2,24 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import { useHistory } from "react-router-dom";
+
 import "./Login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 export default function Login() {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/dashboard");
+  }
+
   return (
     <div>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="text" placeholder="Enter email" />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -23,7 +32,7 @@ export default function Login() {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={handleClick}>
           Submit
         </Button>
       </Form>
