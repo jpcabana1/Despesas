@@ -1,0 +1,44 @@
+{
+  "despesas": [
+    {
+      "id": 0,
+      "nome": "Spotify",
+      "valor": 34.9,
+      "dataCriacao": "2021-08-15T16:42:29.810Z",
+      "dataAtt": "2021-08-15T16:42:29.810Z",
+      "pago": false
+    },
+    {
+      "id": 1,
+      "nome": "Gabinete",
+      "valor": 381.44,
+      "dataCriacao": "2021-08-15T16:42:29.810Z",
+      "dataAtt": "2021-08-15T16:42:29.810Z",
+      "pago": true
+    }
+  ],
+  "acrescimo": [
+    {
+      "id": 0,
+      "desc": "Mariana",
+      "valor": 90,
+      "dataCriacao": "2021-08-15T16:42:29.810Z",
+      "dataAtt": "2021-08-15T16:42:29.810Z"
+    },
+    {
+      "id": 1,
+      "desc": "Duda",
+      "valor": 56.69,
+      "dataCriacao": "2021-08-15T16:42:29.810Z",
+      "dataAtt": "2021-08-15T16:42:29.810Z"
+    }
+  ],
+  "usuarios":[
+    {
+      "id":0,
+      "usuario":"jpcabana1",
+      "senha":"1234",
+      "nome":"João Pedro de Melo Cabana"
+    }
+  ]
+}
