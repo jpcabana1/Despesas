@@ -33,12 +33,18 @@
       "dataAtt": "2021-08-15T16:42:29.810Z"
     }
   ],
-  "usuarios":[
+  "usuarios": [
     {
-      "id":0,
-      "usuario":"jpcabana1",
-      "senha":"1234",
-      "nome":"João Pedro de Melo Cabana"
+      "id": 0,
+      "usuario": "jpcabana1",
+      "senha": "1234",
+      "nome": "João Pedro de Melo Cabana"
+    },
+    {
+      "id": 1,
+      "usuario": "jubileu",
+      "senha": "1234",
+      "nome": "Jubileu da Silva"
     }
   ]
 }

@@ -1,41 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 import { useHistory } from "react-router-dom";
 
 import "./Login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const url = "http://localhost:3081/usuarios/0";
+
 export default function Login() {
-  let history = useHistory();
-
-  function handleClick() {
-    history.push("/dashboard");
-  }
-
   return (
     <div>
       <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="text" placeholder="Enter email" />
+        <Form.Group className="mb-3">
+          <Form.Label>Usuário</Form.Label>
+          <Form.Control type="text" placeholder="Informe o usuário" />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+            Não compartilhe seus dados com ninguém.
           </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+        <Form.Group className="mb-3">
+          <Form.Label>Senha</Form.Label>
+          <Form.Control type="password" placeholder="Digite sua senha" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleClick}>
-          Submit
-        </Button>
+
+        <LoginButton />
       </Form>
     </div>
   );
+}
+
+function LoginButton() {
+  const [show, setShow] = useState(false);
+  const [user, setUser] = useState();
+  let history = useHistory();
+
+  const requestUser = async () => {
+    const rawResponse = await fetch(url);
+    const content = await rawResponse.json();
+    console.log(content);
+    if (user !== {}) {
+      history.push("/dashboard");
+    }
+  };
+
+  if (show) {
+    return (
+      <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+        <Alert.Heading>Falha no login</Alert.Heading>
+        <p>Usuário ou senha inválidos.</p>
+      </Alert>
+    );
+  }
+  return <Button onClick={() => requestUser()}>Login</Button>;
 }

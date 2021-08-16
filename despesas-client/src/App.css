@@ -38,7 +38,8 @@
 }
 
 .app {
+  /* height: 40vmin;
   display: grid;
-  place-items: center;
+  place-items: center; */
   border-style: ridge;
 }
