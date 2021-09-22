@@ -1,0 +1,37 @@
+{
+    "despesas":[
+        {
+            "id":1,
+            "nome":"Drogasil",
+            "preco":68.28,
+            "tipo":"Pessoal",
+            "data":{
+                "year": 2021,
+                "month": 9,
+                "day": 22
+              }
+        },
+        {
+            "id":2,
+            "nome":"Spotify",
+            "preco":34.9,
+            "tipo":"Fixo",
+            "data":{
+                "year": 2021,
+                "month": 9,
+                "day": 22
+              }
+        },
+        {
+            "id":3,
+            "nome":"Celpe",
+            "preco":321.54,
+            "tipo":"Variavel",
+            "data":{
+                "year": 2021,
+                "month": 9,
+                "day": 22
+              }
+        }
+    ]
+}
