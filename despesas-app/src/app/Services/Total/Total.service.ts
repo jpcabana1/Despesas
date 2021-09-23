@@ -5,22 +5,22 @@ import { retry, catchError } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment.dev';
 
-import { DespesasDTO } from 'src/app/DTO/DespesasDTO';
 import { AbstractHandleError } from '../AbstractHandleError';
+import { TotalDTO } from 'src/app/DTO/TotalDTO';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DespesasService extends AbstractHandleError {
-  url: string = environment.despesasUrl + 'despesas';
+export class TotalService extends AbstractHandleError {
+  url: string = environment.despesasUrl + 'total';
 
   constructor(private http: HttpClient) {
     super();
   }
 
-  getDespesas(): Observable<DespesasDTO[]> {
+  getTotalById(id: number): Observable<TotalDTO> {
     return this.http
-      .get<DespesasDTO[]>(this.url)
+      .get<TotalDTO>(this.url + '/' + id)
       .pipe(retry(3), catchError(this.handleError));
   }
 }

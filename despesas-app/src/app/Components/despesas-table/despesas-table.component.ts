@@ -16,7 +16,8 @@ import {
 })
 export class DespesasTableComponent implements OnInit {
   despesas: DespesasDTO[] = [];
-
+  loading: boolean = true;
+  errorMessage: string = '';
   thumbtack = faThumbtack;
   exchangeAlt = faExchangeAlt;
   male = faMale;
@@ -25,10 +26,20 @@ export class DespesasTableComponent implements OnInit {
   constructor(private despesasService: DespesasService) {}
 
   ngOnInit() {
-    this.despesasService.getDespesas().subscribe((res) => {
-      this.despesas = res;
-      console.log(this.despesas);
-      console.log(this.despesas.length === 0);
-    });
+    this.carregarDespesas();
+  }
+
+  carregarDespesas() {
+    this.despesasService.getDespesas().subscribe(
+      (res: DespesasDTO[]) => {
+        this.loading = false;
+        this.despesas = [...res];
+      },
+      (erro) => {
+        this.loading = false;
+        console.log(erro.message);
+        this.errorMessage = 'Não foi possível recuperar despesas!';
+      }
+    );
   }
 }
