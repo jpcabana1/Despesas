@@ -1,0 +1,51 @@
+<ng-container *ngIf="loading; else notLoading">
+  <div class="d-flex align-items-center">
+    <strong>Calculando totais...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  </div>
+</ng-container>
+<ng-template #notLoading>
+  <ng-container *ngIf="errorEx; else requestSucceded">
+    <ngb-alert type="dark" [dismissible]="true">
+      <strong>Aviso!</strong> Não foi possível calcular o valor total.
+    </ngb-alert>
+  </ng-container>
+  <ng-template #requestSucceded>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Tipo de Despesa</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let reg of totais">
+          <ng-container [ngSwitch]="reg.name">
+            <td *ngSwitchCase="'Fixo'">
+              <fa-icon [icon]="thumbtack"></fa-icon> {{ reg.name }}
+            </td>
+            <td *ngSwitchCase="'Variavel'">
+              <fa-icon [icon]="exchangeAlt"></fa-icon> {{ reg.name }}
+            </td>
+            <td *ngSwitchCase="'Pessoal'">
+              <fa-icon [icon]="male"></fa-icon> {{ reg.name }}
+            </td>
+            <td *ngSwitchCase="'EU'">
+              <fa-icon [icon]="moneyBill"></fa-icon> {{ reg.name }}
+            </td>
+            <td *ngSwitchDefault>
+              <fa-icon [icon]="dollar"></fa-icon> <b> {{ reg.name }}</b>
+            </td>
+          </ng-container>
+
+          <ng-container *ngIf="reg.name === 'Total'; else NaoEhTotal">
+            <td><b>{{ reg.value }}</b> </td>
+          </ng-container>
+          <ng-template #NaoEhTotal>
+            <td>{{ reg.value }}</td>
+          </ng-template>
+          </tr>
+        </tbody>
+      </table>
+  </ng-template>
+</ng-template>

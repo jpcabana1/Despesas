@@ -1,0 +1,73 @@
+<div class="lista">
+
+
+<ng-container *ngIf="loading; else elseLoading">
+  <div class="d-flex align-items-center">
+    <strong>Carregando despesas...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  </div>
+</ng-container>
+<ng-template #elseLoading>
+  <ng-container
+    *ngIf="
+      this.errorMessage !== '' || this.despesas.length === 0;
+      else elseTemplate
+    "
+  >
+    <ngb-alert type="warning" [dismissible]="true">
+      <strong>Aviso!</strong> {{ this.errorMessage }}
+    </ngb-alert>
+  </ng-container>
+
+  <ng-template #elseTemplate>
+    <ngb-alert type="success" [dismissible]="true">
+      <strong>Aviso!</strong> Todas as despesas foram carregadas.
+    </ngb-alert>
+   
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let desp of despesas
+                | slice: (page - 1) * pageSize:page * pageSize
+            "
+          >
+            <td>{{ desp.id | number }}</td>
+            <td>{{ desp.nome }}</td>
+            <td>{{ desp.preco | number }}</td>
+            <ng-container [ngSwitch]="desp.tipo">
+              <td *ngSwitchCase="'Fixo'">
+                <fa-icon [icon]="thumbtack"></fa-icon> {{ desp.tipo }}
+              </td>
+              <td *ngSwitchCase="'Variavel'">
+                <fa-icon [icon]="exchangeAlt"></fa-icon> {{ desp.tipo }}
+              </td>
+              <td *ngSwitchCase="'Pessoal'">
+                <fa-icon [icon]="male"></fa-icon> {{ desp.tipo }}
+              </td>
+              <td *ngSwitchDefault>
+                <fa-icon [icon]="moneyBill"></fa-icon> {{ desp.tipo }}
+              </td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+      <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="despesas.length"
+        [maxSize]="maxSize"
+        [boundaryLinks]="true"
+      ></ngb-pagination>
+ 
+  </ng-template>
+</ng-template>
+</div>

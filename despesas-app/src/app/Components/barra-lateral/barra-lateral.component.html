@@ -1,0 +1,27 @@
+<div class="barra-lateral">
+  <ngb-accordion #acc="ngbAccordion">
+    <ngb-panel id="toggle-1" title="Despesas">
+      <ng-template ngbPanelContent>
+        <ul>
+          <li><a [routerLink]="'/'">Dashboard</a></li>
+          <li><a [routerLink]="'/lista'">Lista</a></li>
+          <li><a [routerLink]="'/cadastro'">Cadastrar</a></li>
+        </ul>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="toggle-2" title="Combustível">
+      <ng-template ngbPanelContent>
+       <ul>
+         <li><a [routerLink]="'/'">Cadastro</a></li>
+       </ul>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="toggle-3" title="To-do list">
+      <ng-template ngbPanelContent>
+        <ul>
+          <li><a [routerLink]="'/'">Cadastro</a></li>
+        </ul>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>
