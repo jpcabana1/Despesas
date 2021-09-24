@@ -12,16 +12,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
 
+
+
+
 import { DespesasTableComponent } from './Components/despesas-table/despesas-table.component';
 import { TotaisTable } from './Components/totais-table/totais-table.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DespesasGraficoComponent } from './Components/despesas-grafico/despesas-grafico.component';
-
-
-const routes: Routes = [{ path: '', component: DespesasTableComponent }];
+import { BarraLateralComponent } from './Components/barra-lateral/barra-lateral.component';
+import { DepesasNavbarComponent } from './Components/depesas-navbar/depesas-navbar.component'
+const routes: Routes = [
+  { path: '', component: DespesasGraficoComponent },
+  { path: 'lista', component: DespesasTableComponent },
+  { path: 'cadastro', component: DespesasGraficoComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent, DespesasTableComponent, TotaisTable, DespesasGraficoComponent],
+  declarations: [
+    AppComponent,
+    DespesasTableComponent,
+    TotaisTable,
+    DespesasGraficoComponent,
+    BarraLateralComponent,
+    DepesasNavbarComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,7 +47,7 @@ const routes: Routes = [{ path: '', component: DespesasTableComponent }];
     MatProgressSpinnerModule,
     NgxChartsModule,
     FormsModule,
-    RouterModule.forChild([]),
+    RouterModule.forChild(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],
