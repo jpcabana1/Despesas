@@ -76,37 +76,93 @@
         "day": 23
       },
       "id": 7
+    },
+    {
+      "nome": "Brennand",
+      "preco": 60,
+      "tipo": "Pessoal",
+      "data": {
+        "year": 2021,
+        "month": 9,
+        "day": 24
+      },
+      "id": 8
+    },
+    {
+      "nome": "Subway",
+      "preco": 27.19,
+      "tipo": "Pessoal",
+      "data": {
+        "year": 2021,
+        "month": 9,
+        "day": 24
+      },
+      "id": 9
+    },
+    {
+      "nome": "Kit Treino Bermuda",
+      "preco": 178.74,
+      "tipo": "Pessoal",
+      "data": {
+        "year": 2021,
+        "month": 9,
+        "day": 24
+      },
+      "id": 10
+    },
+    {
+      "nome": "Burguer King",
+      "preco": 3.01,
+      "tipo": "Pessoal",
+      "data": {
+        "year": 2021,
+        "month": 9,
+        "day": 24
+      },
+      "id": 11
+    },
+    {
+      "nome": "Burguer King",
+      "preco": 7.9,
+      "tipo": "Pessoal",
+      "data": {
+        "year": 2021,
+        "month": 9,
+        "day": 24
+      },
+      "id": 12
     }
   ],
   "total": [
     {
-      "id":0,
-      "totalRegistros":[
+      "id": 0,
+      "totalRegistros": [
         {
-            "id": 0,
-            "name": "EU",
-            "value": 328.67
+          "id": 0,
+          "name": "EU",
+          "value": 328.67
         },
         {
-            "id": 1,
-            "name": "Fixo",
-            "value": 66.35
+          "id": 1,
+          "name": "Fixo",
+          "value": 66.35
         },
         {
-            "id": 2,
-            "name": "Variavel",
-            "value": 321.54
+          "id": 2,
+          "name": "Variavel",
+          "value": 321.54
         },
         {
-            "id": 3,
-            "name": "Pessoal",
-            "value": 203.48
+          "id": 3,
+          "name": "Pessoal",
+          "value": 203.48
         },
         {
-            "id": 4,
-            "name": "Total",
-            "value": 920.04
+          "id": 4,
+          "name": "Total",
+          "value": 920.04
         }
-    ]
-    }]
+      ]
+    }
+  ]
 }

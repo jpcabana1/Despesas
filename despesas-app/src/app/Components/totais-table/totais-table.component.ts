@@ -35,12 +35,11 @@ export class TotaisTable implements OnInit {
       (res: TotalDTO) => {
         this.loading = false;
         this.totais = [...res.totalRegistros];
-        console.log(this.totais)
       },
       (err) =>{
         this.loading = false;
-        console.log(err);
         this.errorEx = err;
+        console.log(err)
       }
     );
   }

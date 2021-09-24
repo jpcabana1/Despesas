@@ -1,12 +1,31 @@
-<ngx-charts-bar-vertical
-  [results]="totais"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  (select)="onSelect($event)">
-</ngx-charts-bar-vertical>
+<ng-container *ngIf="loading; else carregando">
+  <div class="d-flex align-items-center">
+    <strong>Preparando gráfico...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  </div>
+</ng-container>
+<ng-template #carregando>
+  <ng-container *ngIf="errorEx; else requestSucceded">
+    <ngb-alert type="danger" [dismissible]="true">
+      <strong>Aviso!</strong> Não foi possível carregar gráfico.
+    </ngb-alert>
+  </ng-container>
+  <ng-template #requestSucceded>
+    <div class="grafico">
+      <ngx-charts-bar-vertical
+      [results]="totais"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)"
+    >
+    </ngx-charts-bar-vertical>
+    </div>
+    
+  </ng-template>
+</ng-template>

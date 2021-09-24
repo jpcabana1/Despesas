@@ -17,6 +17,10 @@ import {
 export class DespesasTableComponent implements OnInit {
   despesas: DespesasDTO[] = [];
   loading: boolean = true;
+  page: number = 1;
+  pageSize: number = 8;
+  maxSize: number = 5;
+
   errorMessage: string = '';
   thumbtack = faThumbtack;
   exchangeAlt = faExchangeAlt;

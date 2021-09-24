@@ -5,12 +5,12 @@
   </div>
 </ng-container>
 <ng-template #notLoading>
-  <ng-container *ngIf="errorEx; else requestFails">
+  <ng-container *ngIf="errorEx; else requestSucceded">
     <ngb-alert type="dark" [dismissible]="true">
       <strong>Aviso!</strong> Não foi possível calcular o valor total.
     </ngb-alert>
   </ng-container>
-  <ng-template #requestFails>
+  <ng-template #requestSucceded>
       <table class="table table-dark">
         <thead>
           <tr>
@@ -38,10 +38,10 @@
             </td>
           </ng-container>
 
-          <ng-container *ngIf="reg.name === 'Total'; else nEhTotal">
+          <ng-container *ngIf="reg.name === 'Total'; else NaoEhTotal">
             <td><b>{{ reg.value }}</b> </td>
           </ng-container>
-          <ng-template #nEhTotal>
+          <ng-template #NaoEhTotal>
             <td>{{ reg.value }}</td>
           </ng-template>
           </tr>
