@@ -164,5 +164,47 @@
         }
       ]
     }
+  ],
+  "categorias":[
+    {
+      "nome":"Pessoal",
+      "icon":"faThumbtack"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faExchangeAlt"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faMale"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faMoneyBillWaveAlt"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faDollarSign"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faPaw"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faUtensils"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faSeedling"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faBaby"
+    },
+    {
+      "nome":"Pessoal",
+      "icon":"faMedkit"
+    }
   ]
 }

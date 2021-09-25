@@ -1,0 +1,45 @@
+
+<h2 mat-dialog-title>Menu Categoria</h2>
+<mat-dialog-content class="mat-typography">
+<div class="cadCat">
+  <form (ngSubmit)="this.onSubmit()" [formGroup]="profileForm">
+    <div class="cad">
+
+      <div class="botoes">
+        <button
+          mat-fab
+          color="primary"
+          aria-label="Example icon button with a delete icon"
+          *ngFor="let icone of icones"
+          value="icone"
+          (click)="this.setIcone(this.icone)"
+        >
+          <app-icone-categoria [icone]="icone"></app-icone-categoria>
+        </button>
+      </div>
+      <br />
+      <section>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="categoria" />
+        </mat-form-field>
+
+        <button
+          type="button"
+          class="btn btn-success"
+          [disabled]="!profileForm.valid"
+          style="width: 5rem;"
+          type="submit"
+        >
+          <app-icone-categoria [icone]="plus"></app-icone-categoria>
+          
+        </button>
+      </section>
+
+    </div>
+  </form>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

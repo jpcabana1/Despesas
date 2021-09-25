@@ -1,0 +1,40 @@
+<div>
+
+  <form >
+    <mat-form-field appearance="fill">
+      <mat-label>Data de criação</mat-label>
+      <input matInput [matDatepicker]="picker2" />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label>Valor</mat-label>
+      <input
+        matInput
+        type="number"
+        class="example-right-align"
+        placeholder="0"
+      />
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option [value]="'EU'">EU</mat-option>
+        <mat-option [value]="'Fixo'">Fixo</mat-option>
+        <mat-option [value]="'Variavel'">Variavel</mat-option>
+        <mat-option selected [value]="'Pessoal'">Pessoal</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="btn btn-warning" (click)="openDialog()">Categorias</button>
+    <br>
+    <button type="button" class="btn btn-outline-success">Success</button>
+  </form>
+</div>

@@ -1,0 +1,30 @@
+button {
+  margin: 1rem;
+}
+
+button:focus {
+  margin: 1rem;
+  color: warn
+}
+
+button:hover {
+  margin: 1rem;
+  color: warn
+}
+
+.botoes {
+  width: 100%;
+}
+
+.cad {
+  width: 35rem;
+}
+
+section{
+  float: left;
+}
+
+.cadCat {
+  width: 100%;
+  height: max-content;
+}

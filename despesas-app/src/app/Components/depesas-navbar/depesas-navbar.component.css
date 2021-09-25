@@ -1,0 +1,10 @@
+nav{
+    display: inline-table;
+    width: 100%;
+    position: static;
+    
+}
+
+.btn{
+   margin-left: 1rem; 
+}
