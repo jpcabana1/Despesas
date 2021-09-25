@@ -20,7 +20,7 @@
   </ng-container>
 
   <ng-template #elseTemplate>
-    <ngb-alert type="success" [dismissible]="true">
+    <ngb-alert type="success" [dismissible]="false">
       <strong>Aviso!</strong> Todas as despesas foram carregadas.
     </ngb-alert>
    
@@ -29,7 +29,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
-            <th scope="col">Preço</th>
+            <th scope="col">Valor</th>
             <th scope="col">Tipo</th>
           </tr>
         </thead>

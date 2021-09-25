@@ -1,27 +1,62 @@
-<div class="barra-lateral">
-  <ngb-accordion #acc="ngbAccordion">
-    <ngb-panel id="toggle-1" title="Despesas">
-      <ng-template ngbPanelContent>
-        <ul>
-          <li><a [routerLink]="'/'">Dashboard</a></li>
-          <li><a [routerLink]="'/lista'">Lista</a></li>
-          <li><a [routerLink]="'/cadastro'">Cadastrar</a></li>
-        </ul>
-      </ng-template>
-    </ngb-panel>
-    <ngb-panel id="toggle-2" title="Combustível">
-      <ng-template ngbPanelContent>
-       <ul>
-         <li><a [routerLink]="'/'">Cadastro</a></li>
-       </ul>
-      </ng-template>
-    </ngb-panel>
-    <ngb-panel id="toggle-3" title="To-do list">
-      <ng-template ngbPanelContent>
-        <ul>
-          <li><a [routerLink]="'/'">Cadastro</a></li>
-        </ul>
-      </ng-template>
-    </ngb-panel>
-  </ngb-accordion>
+<div class="barra-lateral" [hidden]="hidden"  >
+ 
+<mat-accordion>
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       <b>Despesas</b>
+      </mat-panel-title>
+      <mat-panel-description>
+        exp
+      </mat-panel-description>
+     
+    </mat-expansion-panel-header>
+
+    <ul>
+      <li>
+        <a [routerLink]="'/'">Dashboard</a>
+      </li>
+      <li>
+        <a [routerLink]="'/lista'">Tabela</a>
+      </li>
+      <li>
+        <a [routerLink]="'/cadastro'">Cadastro</a>
+      </li>
+    </ul>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       <b>Combustível</b>
+      </mat-panel-title>
+      <mat-panel-description>
+        exp
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <li>
+      <a [routerLink]="'/'">Cadastro</a>
+    </li>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       <b>Todo-List</b>
+      </mat-panel-title>
+      <mat-panel-description>
+        exp
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <li>
+      <a [routerLink]="'/'">Cadastro</a>
+    </li>
+
+  </mat-expansion-panel>
+
+</mat-accordion>
 </div>
