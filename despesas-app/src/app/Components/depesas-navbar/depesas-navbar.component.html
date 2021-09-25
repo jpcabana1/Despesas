@@ -1,17 +1,52 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Despesas</a>
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>
+  <a class="navbar-brand" [routerLink]="'/'">
+    <fa-icon [icon]="line"></fa-icon>
+    <span *ngIf="!small"> EasyExpense</span></a
+  >
+
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+      <fa-icon [icon]="invoice"></fa-icon>
+      <span *ngIf="!small"> Despesas</span>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="'/'"> Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="'/lista'"> Tabela</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/cadastro'"> Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+      <fa-icon [icon]="gas"></fa-icon>
+      <span *ngIf="!small"> Combustível</span>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/cadastro'">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+      <fa-icon [icon]="list"></fa-icon>
+      <span *ngIf="!small"> Todo-List</span>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/cadastro'">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
