@@ -12,7 +12,8 @@ import {
   faBaby,
   faMedkit,
   faPlus,
-  faDumbbell
+  faDumbbell,
+  faSave,
 } from '@fortawesome/free-solid-svg-icons';
 import { CategoriaEnum } from 'src/app/Enums/categoria-enum.enum';
 
@@ -21,6 +22,21 @@ import { CategoriaEnum } from 'src/app/Enums/categoria-enum.enum';
 })
 export class IconeService {
   constructor() {}
+  categorias: any[] = [
+    faThumbtack,
+    faExchangeAlt,
+    faMale,
+    faMoneyBillWaveAlt,
+    faDollarSign,
+    faPaw,
+    faUtensils,
+    faSeedling,
+    faBaby,
+    faMedkit,
+    faPlus,
+    faDumbbell,
+  ];
+
   icons: any[] = [
     faThumbtack,
     faExchangeAlt,
@@ -33,7 +49,8 @@ export class IconeService {
     faBaby,
     faMedkit,
     faPlus,
-    faDumbbell
+    faDumbbell,
+    faSave,
   ];
 
   selectIcon(name: string): any {
@@ -60,8 +77,10 @@ export class IconeService {
         return faMedkit;
       case CategoriaEnum.faPlus:
         return faPlus;
-        case CategoriaEnum.faDumbbell:
-          return faDumbbell;
+      case CategoriaEnum.faDumbbell:
+        return faDumbbell;
+      case CategoriaEnum.faSave:
+        return faSave;
       default:
         return faDollarSign;
     }

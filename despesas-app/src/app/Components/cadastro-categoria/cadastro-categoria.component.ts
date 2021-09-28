@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IconeService } from 'src/app/Services/Icone/Icone.service';
-import { Validators, FormBuilder } from '@angular/forms';
-
+import {
+  Validators,
+  FormBuilder,
+  FormGroup,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-categoria',
@@ -10,22 +13,25 @@ import { Validators, FormBuilder } from '@angular/forms';
 })
 export class CadastroCategoriaComponent implements OnInit {
   icones: any[] | undefined;
-  plus = this.iconService.selectIcon('faPlus');
+  plus: any;
+  profileForm: FormGroup;
 
-  profileForm = this.formBuilder.group({
-    categoria: ['', Validators.required],
-    nomeIcone: ['', Validators.required],
-  });
   constructor(
     private iconService: IconeService,
-    private formBuilder: FormBuilder,
-  ) {}
-
-  ngOnInit() {
-    this.icones = [...this.iconService.icons];
+    private formBuilder: FormBuilder
+  ) {
+    this.profileForm = this.formBuilder.group({
+      categoria: ['', Validators.required],
+      nomeIcone: ['', Validators.required],
+    });
   }
 
-  setIcone(value: any) {
+  ngOnInit(): void {
+    this.icones = [...this.iconService.categorias];
+    this.plus = this.iconService.selectIcon('faPlus');
+  }
+
+  setIcone(value: any): void {
     this.profileForm.setValue({
       nomeIcone: value.iconName,
       categoria: this.profileForm.get('categoria')?.value,
@@ -33,7 +39,7 @@ export class CadastroCategoriaComponent implements OnInit {
     console.log(this.profileForm.value);
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.profileForm.valid) {
       console.log('POST', this.profileForm.value);
     }

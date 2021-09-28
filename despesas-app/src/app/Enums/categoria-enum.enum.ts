@@ -10,5 +10,6 @@ export enum CategoriaEnum {
   faBaby = 'faBaby',
   faMedkit = 'faMedkit',
   faPlus = 'faPlus',
-  faDumbbell = 'faDumbbell'
+  faDumbbell = 'faDumbbell',
+  faSave = 'faSave'
 }
